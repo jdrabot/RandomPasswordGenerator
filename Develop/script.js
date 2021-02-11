@@ -21,6 +21,23 @@ function createPassword () {
     var ucChoice = uppersChoice();
     var numChoice = numbersChoice();
     var symChoice = symbolsChoice();
+    var firstPass = [];
+    if (!lcChoice && !ucChoice && !numChoice && !symChoice) {
+      window.alert("You must pick at least one you piece of garbage!");
+      createPassword();
+    } 
+    if (lcChoice) {
+      firstPass = firstPass.concat(lowercasechar);
+    }
+    if (ucChoice) {
+      firstPass = firstPass.concat(uppercasechar);
+    }
+    if (numChoice) {
+      firstPass = firstPass.concat(numboxchar);
+    }
+    if (symChoice) {
+      firstPass = firstPass.concat(symboxchar);
+    }
   }
 }
 function lowersChoice () {
