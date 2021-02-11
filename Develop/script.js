@@ -28,9 +28,21 @@ function lowersChoice () {
   var lcChoice = lcChars;
   return lcChoice;
 };
-function uppersChoice ();
-function numbersChoice ();
-function symbolsChoice ();
+function uppersChoice () {
+  var ucChars = confirm("Do you want to use uppercase letters in your password?");
+  var ucChoice = ucChars;
+  return ucChoice;
+};
+function numbersChoice () {
+  var numChars = confirm("Do you want to use numbers in your password?");
+  var numChoice = numChars;
+  return numChoice;
+};
+function symbolsChoice () {
+  var symChars = confirm("Do you want to use symbols in your password?");
+  var symChoice = symChars;
+  return symChoice;
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
