@@ -11,11 +11,11 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-function createPassword () {
-  var charLength = parseInt(prompt("How many characters do you want in your password?"));
+function generatePassword() {
+  var charLength = parseInt(prompt("How many characters do you want in your password loser?"));
   if (charLength < 8 || charLength > 128) {
-    window.alert("Pick a number between 8 and 128 punk.");
-    createPassword();
+    alert("Pick a number between 8 and 128 punk.");
+    generatePassword();
   } else {
     var lcChoice = lowersChoice();
     var ucChoice = uppersChoice();
@@ -23,8 +23,8 @@ function createPassword () {
     var symChoice = symbolsChoice();
     var firstPass = [];
     if (!lcChoice && !ucChoice && !numChoice && !symChoice) {
-      window.alert("You must pick at least one you piece of garbage!");
-      createPassword();
+      alert("You must pick at least one you piece of garbage!");
+      generatePassword();
     } 
     if (lcChoice) {
       firstPass = firstPass.concat(lowercasechar);
@@ -38,7 +38,11 @@ function createPassword () {
     if (symChoice) {
       firstPass = firstPass.concat(symboxchar);
     }
+    for(var i = 0; i < charLength; i++) {
+      password += firstPass[Math.floor(Math.random() * firstPass.length)];
+    }
   }
+  return password;
 }
 function lowersChoice () {
   var lcChars = confirm("Do you want to use lowercase letters in your password?");
