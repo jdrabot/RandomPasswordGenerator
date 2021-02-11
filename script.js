@@ -5,14 +5,16 @@ var uppercasechar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 var numboxchar = ["0", "8", "1", "2", "9", "3", "4", "5", "6", "7"];
 var symboxchar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "{", "}", "]", "[", ";", ":", "?", "/", ".", "<", ","];
 
-// Write password to the #password input
+// this function writes out the generated password onto the screen
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+// as the name suggests, this function generates the password
 function generatePassword() {
   var charLength = parseInt(prompt("How many characters do you want in your password loser?"));
+  // makes sure the password is between 8 and 128 characters long
   if (charLength < 8 || charLength > 128) {
     alert("Pick a number between 8 and 128 punk.");
     generatePassword();
@@ -21,6 +23,7 @@ function generatePassword() {
     var ucChoice = uppersChoice();
     var numChoice = numbersChoice();
     var symChoice = symbolsChoice();
+    // this is our empty array that we will concat the other arrays into for the password
     var firstPass = [];
     if (!lcChoice && !ucChoice && !numChoice && !symChoice) {
       alert("You must pick at least one you piece of garbage!");
