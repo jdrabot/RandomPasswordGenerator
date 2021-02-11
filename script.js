@@ -44,6 +44,7 @@ function generatePassword() {
   }
   return password;
 }
+// These functions create pop up windows asking for the desired characters in the user's password
 function lowersChoice () {
   var lcChars = confirm("Do you want to use lowercase letters in your password?");
   var lcChoice = lcChars;
